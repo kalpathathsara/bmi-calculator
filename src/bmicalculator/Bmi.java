@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bmicalculator;
 
 /**
@@ -12,14 +7,16 @@ package bmicalculator;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Bmi {
+public class Bmi {
+    // Attributes of the Bmi class
     private int id;
     private String name;
     private int yob;
     private int height;
     private int weight;
 
-    public Bmi(int id, String name, int yob, int height, int weight) {
+    // Methods of the Bmi class
+    public Bmi(int id, String name, int yob, int height, int weight) { // constructor
         this.id = id;
         this.name = name;
         this.yob = yob;
@@ -27,6 +24,7 @@ class Bmi {
         this.weight = weight;
     }
 
+    // setters
     public void setHeight(int height) {
         this.height = height;
     }
@@ -35,22 +33,24 @@ class Bmi {
         this.weight = weight;
     }
 
-    public double calculate() {
-        System.out.println("Calculated BMI");
-        return 0;
-    }
-
-    public void display() {
-        double bmi = calculate();
-        System.out.println("BMI for " + name + ": " + bmi);
-    }
-    
+    // getters
     public int getId() {
         return id;
     }
 
     public String getName() {
         return name;
+    }
+    
+    // other methods
+    public double calculate() { // calculating bmi
+        System.out.println("Calculated BMI");
+        return 0;
+    }
+
+    public void display() { // displaying bmi
+        double bmi = calculate();
+        System.out.println("BMI for " + name + ": " + bmi);
     }
     
   

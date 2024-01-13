@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bmicalculator;
 
 import java.util.ArrayList;
@@ -12,10 +7,10 @@ import java.util.Scanner;
  *
  * @author Kalpa
  */
-class Tester {
-    private ArrayList<Bmi> bmiList = new ArrayList<>();
-    private int idCounter = 1;
-    private Scanner scanner = new Scanner(System.in);
+public class Tester {
+    private ArrayList<Bmi> bmiList = new ArrayList<>(); // An ArrayList to store the data of all users
+    private int idCounter = 1;  // for creating a unique id
+    private Scanner scanner = new Scanner(System.in);  // Scanner to get user inputs
 
     public static void main(String[] args) {
         Tester tester = new Tester();
@@ -36,7 +31,7 @@ class Tester {
             choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch (choice) {
+            switch (choice) { //Used a switch to trigger each task
                 case 1:
                     create();
                     break;
@@ -61,14 +56,14 @@ class Tester {
     }
 
 
-    public void index() {
+    public void index() { // Display all the data
         System.out.println("BMI data for all users:");
         for (Bmi bmi : bmiList) {
             bmi.display();
         }
     }
 
-    public void view(int id) {
+    public void view(int id) { // Display the data of a particular user
         System.out.println("Showing BMI data for user with ID " + id + ":");
         for (Bmi bmi : bmiList) {
             if (bmi.getId() == id) {
@@ -79,7 +74,7 @@ class Tester {
         System.out.println("BMI record not found");
     }
     
-    public void create() {
+    public void create() { // Creating a record
         System.out.println("Creating a record");
 
         // Collect user input
@@ -101,12 +96,12 @@ class Tester {
     }
 
 
-    public void deleteAll() {
+    public void deleteAll() { // Delete all the data from the bmi ArrayList
         bmiList.clear();
         System.out.println("All BMI records deleted.");
     }
 
-    public void exit() {
+    public void exit() { // Closing calculaor
         System.out.println("Calculator closed!");
         System.exit(0);
     }
